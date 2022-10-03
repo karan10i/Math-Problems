@@ -1,0 +1,53 @@
+#include <iostream>
+#include<math.h>
+
+
+using namespace std;
+int no_of_turns(int n){
+    int outcomes;
+    outcomes=pow(2,n);
+    
+    return outcomes;
+}
+
+void take_in_the_result(int n){
+    cout<<"no of outcomes= "<<no_of_turns(n)<<endl;
+    int arr[no_of_turns(n)-1],H=0,T=0;
+    cout<<"0 is for heads and 1 for tails"<<endl;
+    for(int i=0;i<no_of_turns(n);i++){
+        
+        cin>>arr[i];
+        
+        if(arr[i]==0){
+            H=H+1;
+        }
+        else if(arr[i]==1){
+            T=T+1;
+        }
+        else{
+            cout<<"wrong input"<<endl;
+            break;
+
+        }
+
+    }
+    float probability_of_no_of_Heads,probability_of_no_of_Tails;
+    probability_of_no_of_Heads=float(H)/no_of_turns(n);
+    probability_of_no_of_Tails=float(T)/no_of_turns(n);
+    
+
+
+    cout<<"probabilitiy of no of heads "<< probability_of_no_of_Heads<<endl;
+    cout<<"probabilitiy of no of tails "<< probability_of_no_of_Tails<<endl;
+}
+
+
+int main(){
+    int n;
+    cin>>n;
+    take_in_the_result(n);
+  
+
+return 0;
+
+}
